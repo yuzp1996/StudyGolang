@@ -2,25 +2,25 @@ package main
 
 import (
 	"fmt"
-	"geometry/array"
-	"geometry/channel"
-	"geometry/firstfunction"
-	"geometry/function"
-	"geometry/inheritance"
-	"geometry/maptest"
-	"geometry/method"
-	"geometry/playInterface"
-	"geometry/playdefer"
-	"geometry/playerror"
-	"geometry/playpanic"
-	"geometry/playstring"
-	"geometry/pointer"
-	"geometry/polymorphism"
-	"geometry/readfromfile"
-	"geometry/rectangle"
-	"geometry/reflectplay"
-	"geometry/sort"
-	"geometry/structasclassemployee"
+	"StudyGolang/array"
+	"StudyGolang/channel"
+	"StudyGolang/firstfunction"
+	"StudyGolang/function"
+	"StudyGolang/inheritance"
+	"StudyGolang/maptest"
+	"StudyGolang/method"
+	"StudyGolang/playInterface"
+	"StudyGolang/playdefer"
+	"StudyGolang/playerror"
+	"StudyGolang/playpanic"
+	"StudyGolang/playstring"
+	"StudyGolang/pointer"
+	"StudyGolang/polymorphism"
+	"StudyGolang/readfromfile"
+	"StudyGolang/rectangle"
+	"StudyGolang/reflectplay"
+	"StudyGolang/sort"
+	"StudyGolang/structasclassemployee"
 )
 
 var rectLen, rectWidth float64 = 1, 2
@@ -28,6 +28,11 @@ var rectLen, rectWidth float64 = 1, 2
 const (
 	Separator = "--------------------"
 )
+
+func NewSection(name string) {
+	fmt.Printf("%v \n New Section is %s \n%v \n", Separator, name, Separator)
+}
+
 
 func init() {
 	if rectLen < 0 {
@@ -41,35 +46,17 @@ func init() {
 	if num := 10; num%2 == 0 {
 		fmt.Printf("num %d is Even \n", num)
 	}
-	//fmt.Println("num out of if-esle is %d", num)
 
 }
 func main() {
-	fmt.Println("Geometrical shape properties")
+	NewSection("Function")
 	if rectLen > 0 {
 		fmt.Println("right")
 	}
 	fmt.Printf("area of rectangle %.2f\n", rectangle.Area(rectLen, rectWidth))
 
-	fmt.Println("now let's learn for")
-	for i := 1; i <= 10; i++ {
-		if i > 9 {
-			fmt.Println("bigger rhan 9")
-			break
-		} else if i == 4 {
-			continue
-		} else {
-			fmt.Printf("i is %d\n", i)
-		}
-	}
-	var i int = 1
-	for i < 10 {
-		fmt.Printf("i is %d \n", i)
-		i++
-	}
-	//for {
-	//  fmt.Println("I love XYH")
-	//}
+
+
 
 	switch figer := 1; figer {
 	case 1:
@@ -90,8 +77,6 @@ func main() {
 	case num < 71:
 		fmt.Println("lower than 71")
 	}
-
-	fmt.Println(Separator)
 
 	array.Printarrays([2][3]int{{1, 2, 3}, {4, 5, 6}})
 
@@ -231,6 +216,3 @@ func main() {
 	readfromfile.Readfrombuffer()
 }
 
-func NewSection(name string) {
-	fmt.Printf("%v \n New Section is %s \n%v \n", Separator, name, Separator)
-}

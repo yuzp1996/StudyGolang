@@ -1,7 +1,7 @@
 package cart_test
 
 import (
-	. "geometry/ginkgo/cart"
+	. "StudyGolang/ginkgo/cart"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"testing"
