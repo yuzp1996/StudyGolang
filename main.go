@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"StudyGolang/array"
 	"StudyGolang/channel"
 	"StudyGolang/firstfunction"
@@ -16,11 +15,12 @@ import (
 	"StudyGolang/playstring"
 	"StudyGolang/pointer"
 	"StudyGolang/polymorphism"
-	"StudyGolang/readfromfile"
 	"StudyGolang/rectangle"
 	"StudyGolang/reflectplay"
 	"StudyGolang/sort"
 	"StudyGolang/structasclassemployee"
+	"flag"
+	"fmt"
 )
 
 var rectLen, rectWidth float64 = 1, 2
@@ -35,61 +35,74 @@ func NewSection(name string) {
 
 
 func init() {
-	if rectLen < 0 {
-		fmt.Println("bad it should bigger than 0")
-	} else if rectWidth > 0 {
-		fmt.Println("better thing happend")
-	}
-
-	fmt.Println("init main")
-
-	if num := 10; num%2 == 0 {
-		fmt.Printf("num %d is Even \n", num)
-	}
-
+	fmt.Println("main init")
 }
+
 func main() {
-	NewSection("Function")
-	if rectLen > 0 {
-		fmt.Println("right")
+	sectionflag := flag.String("Section","Function","which section will run")
+	flag.Parse()
+	fmt.Println(*sectionflag)
+	switch *sectionflag {
+	case "Function":{
+		NewSection("Function")
+		fmt.Printf("area of rectangle %.3f\n", rectangle.Area(rectLen, rectWidth))
+		fmt.Printf("Diagonal of rectangle %.2f\n", rectangle.Diagonal(rectLen, rectWidth))
 	}
-	fmt.Printf("area of rectangle %.2f\n", rectangle.Area(rectLen, rectWidth))
+	case "IfElseSwitchFor":{
+		NewSection("IfElseSwitchFor")
+		if true{
+			fmt.Println("gogo")
+		}else if false{
+			fmt.Println("false")
+		}else{
+			fmt.Println("good" )
+		}
 
+		for i:=0; i<10; i++{
+			if i == 2{
+				continue
+			}else{
+				fmt.Println(i)
+			}
+		}
 
+		switch figer := 1; figer {
+		case 1,3,5:
+			fmt.Println("figer is 1")
+		case 2:
+			fmt.Println("figer is  2")
+		default:
+			fmt.Println("default")
+		}
 
-
-	switch figer := 1; figer {
-	case 1:
-		fmt.Println("1")
-	case 2:
-		fmt.Println("2")
-	default:
-		fmt.Println("default")
+		num := 70
+		switch {
+		case num < 100:
+			fmt.Println("lower than 100")
+		case num < 79:
+			fmt.Println("lower than 79")
+			fallthrough
+		case num < 71:
+			fmt.Println("lower than 71")
+		}
 	}
-	num := 70
-	switch {
-	case num < 100:
-		fmt.Println("lower than 100")
-		fallthrough
-	case num < 79:
-		fmt.Println("lower than 79")
-		fallthrough
-	case num < 71:
-		fmt.Println("lower than 71")
+	case "ArraySlice":{
+		NewSection("ArraySlice")
+		array.Printarrays([2][3]int{{1, 2, 3}, {4, 5, 6}})
+		array.Testarray("Now do array\n-----------------------------\n")
+		testArray := [5]string{"chinadog", "dog"}
+		fmt.Printf("testArray is %v \n", testArray)
+		array.Changearray(testArray)
+		fmt.Println("testArray is ", testArray)
+
+		slicetest := []int{1, 2, 3, 4}
+		fmt.Printf("slice can work and now it is %v \n", slicetest)
+		array.SlicewillChange(slicetest)
+		fmt.Printf("slice can work and last it is %v\n", slicetest)
+	}
 	}
 
-	array.Printarrays([2][3]int{{1, 2, 3}, {4, 5, 6}})
 
-	array.Testarray("Now do array\n-----------------------------\n")
-	testArray := [5]string{"chinadog", "dog"}
-	fmt.Printf("testArray is %v \n", testArray)
-	array.Changearray(testArray)
-	fmt.Println("testArray is ", testArray)
-
-	slicetest := []int{1, 2, 3, 4}
-	fmt.Printf("slice can work and now it is %v \n", slicetest)
-	array.SlicewillChange(slicetest)
-	fmt.Printf("slice can work and last it is %v\n", slicetest)
 
 	function.Multipama(1, 2, 2, 2, 2, 3, 3, 1)
 	function.Multipama(2, 2, 2, 2, 2, 3, 3, 1)
@@ -213,6 +226,6 @@ func main() {
 	reflectplay.TryReflect()
 	NewSection("FileHandling")
 	//readfromfile.Readfile()
-	readfromfile.Readfrombuffer()
+	//readfromfile.Readfrombuffer()
 }
 

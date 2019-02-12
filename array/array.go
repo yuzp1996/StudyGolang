@@ -39,7 +39,7 @@ func Printarrays(num [2][3]int) {
 		}
 	}
 
-	Array := [5]int{1, 2, 3, 4, 5}
+	Array := [...]int{1, 2, 3, 4, 5}
 	fmt.Printf("Array is %v", Array)
 	Slice := Array[0:3]
 	for i := range Slice {
