@@ -3,6 +3,11 @@ package main
 import (
 	"StudyGolang/array"
 	"StudyGolang/function"
+	"StudyGolang/maptest"
+	"StudyGolang/method"
+	"StudyGolang/playInterface"
+	"StudyGolang/playstring"
+	"StudyGolang/pointer"
 	"StudyGolang/rectangle"
 	"flag"
 	"fmt"
@@ -86,6 +91,7 @@ func main() {
 		fmt.Printf("slice can work and last it is %v\n", slicetest)
 	}
 	case "Multipama":{
+		NewSection("Multipama")
 		function.Multipama(1, 2, 2, 2, 2, 3, 3, 1)
 		nums := []int{1, 2, 3, 4, 5}
 		//语法糖  可以传入切片
@@ -95,71 +101,99 @@ func main() {
 		function.Change(names...)
 		fmt.Println(names)
 	}
+	case "MapAndString":{
+		NewSection("MAP")
+		maptest1.Newmap()
+
+		NewSection("String")
+		playstring.PrintString("abcdefg")
+		fmt.Println(playstring.ChangeString([]rune("string"), 0))
+
+		//遍历字符串
+		for i,v := range([]rune("zpyu")){
+			fmt.Printf("i is %v and v is %c\n ", i,v)
+		}
+
+		playstring.CheckforJira("aaaa")
+
+	}
+	case "Pointor":{
+		NewSection("Pointer")
+		pointer.Pointertest()
+		val := 1
+		pointer.ShowPointerChange(&val)
+		fmt.Printf("val now is %v\n", val)
+
+
+		pointerarray := [3]int{5, 4, 3}
+		fmt.Printf("before chagne pointerarray is %v \n", pointerarray)
+		pointer.ChangeArray(&pointerarray)
+		fmt.Printf("after changearray now pointerarray is %v\n", pointerarray)
+
+		//这种使用切片的方式是更加推荐的
+		pointer.ChangewithSlice(pointerarray[:])
+		fmt.Printf("after slice chagne is %v\n", pointerarray)
+
+		test := []int{1,2,3,4,5} // golang 的也是最后一个不显示
+		fmt.Printf("test [0:1] is %v and test [1:] is %v", test[0:1], test[1:5])
+	}
+	case "Method":{
+		NewSection("Method")
+		method.Method()
+		method.ChangePersonInfo()
+		method.UseMyInt()
+	}
+	case "Interface":{
+		NewSection("Interface")
+		trainee := playInterface.Trainee{
+			Salary:10,
+		}
+		worker := playInterface.Worker{
+			Salary:10,
+			Welfare:0,
+		}
+		some := playInterface.Somethingelse{
+			Salary:10,
+			Welfare:4,
+		}
+		playInterface.Calculate([]playInterface.TotalSalary{trainee,worker,some})
+		playInterface.WhoAmI("good")
+		playInterface.WhoAmI(123)
+		playInterface.WhoAmI(struct {
+			name string
+		}{
+			name:"zpyu",
+		})
+		playInterface.Assert(3)
+		playInterface.FindType(12)
+		playInterface.FindType("string")
+		playInterface.FindType(struct{
+			name string
+		}{
+			name: "yuzhipeng",
+		})
+		playInterface.FindType(playInterface.Person{
+			Name:"yuzhipeng",
+			Age:12,
+		})
+	}
+
 	}
 
 
 
 
-	//
-	//NewSection("MAP")
-	//maptest1.Newmap()
-	//NewSection("String")
-	//playstring.PrintString("abcdefg")
-	//fmt.Println(playstring.ChangeString([]rune("string"), 0))
-	//
-	//playstring.CheckforJira("aaaa")
-	//NewSection("Pointer")
-	//pointer.Pointertest()
-	//val := 1
-	//
-	//pointer.ShowPointerChange(&val)
-	//fmt.Printf("val now is %v\n", val)
-	//pointerarray := [3]int{5, 4, 3}
-	//fmt.Printf("before chagne pointerarray is %v \n", pointerarray)
-	//pointer.ChangeArray(&pointerarray)
-	//fmt.Printf("after changearray now pointerarray is %v\n", pointerarray)
-	//pointer.ChangewithSlice(pointerarray[:])
-	//fmt.Printf("after slice chagne is %v\n", pointerarray)
-	//quicksort.QuickSort()
-	//test := []int{1,2,3,4,5} // golang 的也是最后一个不显示
-	//fmt.Printf("test [0:1] is %v and test [1:] is %v", test[0:1], test[1:5])
-	//NewSection("Method")
-	//method.Method()
-	//method.ChangePersonInfo()
-	//method.UseMyInt()
-	//
-	//NewSection("Interface")
-	//trainee := playInterface.Trainee{
-	//	Salary:10,
-	//}
-	//worker := playInterface.Worker{
-	//	Salary:10,
-	//	Welfare:0,
-	//}
-	//some := playInterface.Somethingelse{
-	//	Salary:10,
-	//	Welfare:4,
-	//}
-	//playInterface.Calculate([]playInterface.TotalSalary{trainee,worker,some})
-	//playInterface.WhoAmI("good")
-	//playInterface.WhoAmI(123)
-	//playInterface.WhoAmI(struct {
-	//	name string
-	//}{
-	//	name:"zpyu",
-	//})
-	//playInterface.Assert(3)
-    //playInterface.FindType(12)
-	//playInterface.FindType("string")
-	//playInterface.FindType(struct{
-	//	name string
-	//}{
-	//	name: "yuzhipeng",
-	//})
-	//playInterface.FindType(playInterface.Person{
-	//	Name:"yuzhipeng",
-	//	Age:12,
-	//})
+
+
+
+
+
+
+
+
+
+
+
 	//
 	//
 	//NewSection("Thread")
@@ -214,5 +248,7 @@ func main() {
 	//NewSection("FileHandling")
 	////readfromfile.Readfile()
 	////readfromfile.Readfrombuffer()
+	//quicksort.QuickSort()
+
 }
 

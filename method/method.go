@@ -45,10 +45,12 @@ func Method(){
 	//fmt.Printf("Area(*rectangle) is %d", Area(r))
 	fmt.Printf("r.Area is %d \n",r.Area())
 	fmt.Printf("Rectangel id %d \n", Rectangle.Area())
-	//函数说用什么就用什么 方法没事 不管声明的是指针还是值 都能用
-
-
+	//函数说用什么就用什么 方法没事 不管声明的是指针还是值 都能用  不信上面的注释你都打开看看
 }
+
+
+
+
 
 type Person struct {
 	Name string
@@ -75,22 +77,24 @@ func ChangePersonInfo(){
 		Name:"yuzhipeng",
 		Age:24,
 	}
+	fmt.Println()
 	fmt.Printf("Before Change Age yuzhipeng is %v \n", person)
 	(&person).ChangeAge(25)
 	fmt.Printf("After *Change Ager yuzhipeng is %v \n", person)
+	fmt.Println()
 
 	fmt.Printf("Before Change Name yuzhipeng is %v \n", person)
 	person.ChangeName("yuzhipengshuai")
 	fmt.Printf("After Change Name yuzhipeng is %v \n", person)
-
+	fmt.Println()
 	fmt.Printf("Before VAL Change Name yuzhipeng is %v \n", person)
 	person = person.UseValChange("yuzhipenghao")
 	fmt.Printf("After VAL Change Name yuzhipeng is %v \n", person)
-
-
 }
 
 
+
+//为int定义一个别名 然后可以为他设置方法 为非结构体设置方法
 type MyInt int
 
 func (myint MyInt)Add(addint MyInt) MyInt{
