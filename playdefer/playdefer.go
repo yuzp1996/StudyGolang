@@ -22,6 +22,8 @@ func Biggest(nums []int)(num int){
 func finalend(){
 	fmt.Println("everything ends")
 }
+// 就是个栈  越在前面 就越后面执行
+// 也就是defer是在最后执行的 然后defer也有执行顺序 那就是从下往上执行
 func MainDefer(){
 	defer finalend()
 	nums := []int{12,32,34,44,53,253,234,33}
@@ -47,8 +49,7 @@ func (person Person)PersonName(){
 	fmt.Println(person.Name)
 }
 
-
-
+//翻转字符串 多好
 func reverstirng(){
 	name := "zpyu"
 	for _, v := range []rune(name){

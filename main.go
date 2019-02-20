@@ -2,13 +2,21 @@ package main
 
 import (
 	"StudyGolang/array"
+	"StudyGolang/channel"
 	"StudyGolang/function"
+	"StudyGolang/inheritance"
 	"StudyGolang/maptest"
 	"StudyGolang/method"
 	"StudyGolang/playInterface"
+	"StudyGolang/playdefer"
+	"StudyGolang/playerror"
+	"StudyGolang/playselect"
 	"StudyGolang/playstring"
 	"StudyGolang/pointer"
+	"StudyGolang/polymorphism"
 	"StudyGolang/rectangle"
+	"StudyGolang/structasclassemployee"
+	"StudyGolang/thread"
 	"flag"
 	"fmt"
 )
@@ -157,28 +165,116 @@ func main() {
 			Welfare:4,
 		}
 		playInterface.Calculate([]playInterface.TotalSalary{trainee,worker,some})
+		fmt.Println()
+
 		playInterface.WhoAmI("good")
 		playInterface.WhoAmI(123)
+		//匿名结构体 并且进行了赋值
 		playInterface.WhoAmI(struct {
 			name string
 		}{
 			name:"zpyu",
 		})
+		fmt.Println()
+
+
 		playInterface.Assert(3)
 		playInterface.FindType(12)
 		playInterface.FindType("string")
+
 		playInterface.FindType(struct{
 			name string
 		}{
 			name: "yuzhipeng",
 		})
+
 		playInterface.FindType(playInterface.Person{
 			Name:"yuzhipeng",
 			Age:12,
 		})
+		//猜猜看这里为什么也是unknow type ?
+		playInterface.FindType(playInterface.Address{
+			"China",
+			"hebei",
+		})
+		fmt.Println()
+
+
+		e := playInterface.Employee {
+			FirstName: "Naveen",
+			LastName: "Ramanathan",
+			BasicPay: 5000,
+			Pf: 200,
+			TotalLeaves: 30,
+			LeavesTaken: 5,
+		}
+		//interface是在这里进行了使用 声明成某种接口 然后后面再去使用
+		//其实不在这里进行声明也可以使用  只是为了说明一下
+		var s playInterface.SalaryCalculator = e
+		s.DisplaySalary()
+		var l playInterface.LeaveCalculator = e
+		fmt.Println("\nLeaves left =", l.CalculateLeavesLeft())
+		//接口是可以嵌套的
+		var Ee playInterface.EmployeeOperations = e
+		Ee.DisplaySalary()
+	}
+	case "Thread":{
+		NewSection("Thread")
+		thread.MainThread()
+		thread.Maingorount()
+	}
+	case "Channel":{
+		NewSection("Channel")
+		//channel.ChanTest()
+		//channel.ChannelControlleGorou()
+		//channel.ChanCount()
+		//channel.ChanRange()
+		//channel.Chanfor()
+		//channel.CalNum()
+		fmt.Println("Buffered Channels")
+		//channel.BufferChannel()
+		//channel.LenandCap()
+		//channel.Mainprocess()
+		//channel.MainWorkPool()
+		channel.MainFunc()
+	}
+	case "Select":{
+		//playselect.ForandSelect()
+		//playselect.MainSelect()
+		//playselect.MainMutex()
+		playselect.Mainselectchannel()
+	}
+	case "StructAsClass":{
+		e := structasclassemployee.New("Yu", "zhipeng", 100,5,)
+		e.LeavesRemaining()
+	}
+	case "Inheritance":{
+		author := inheritance.Author{
+			"yu","zhipeng",24,
+		}
+		post := inheritance.Post{
+			"goodtitle","very good content",author,
+		}
+		web:=inheritance.Website{
+			Posts:[]inheritance.Post{post},
+		}
+		web.Contents()
+	}
+	case "Polymorphism":{
+		polymorphism.MainPoly()
+	}
+	case "Defer":{
+		playdefer.MainDefer()
+	}
+	case "PlayError":{
+		playerror.Openfile()
+		//playerror.OpenWeb()
+		//err := playerror.ErrorNew("yu zhipeng create an Error")
+		//fmt.Println(err)
+		//playerror.MainCoustmerError()
+	}
 	}
 
-	}
 
 
 
@@ -194,49 +290,8 @@ func main() {
 
 
 
-	//
-	//
-	//NewSection("Thread")
-	////thread.MainThread()
-	////thread.Maingorount()
-	//
-	//NewSection("Channel")
-	//channel.ChanTest()
-	//channel.MainChannel()
-	//channel.ChanCount()
-	////channel.Chanfor()
-	////channel.ChanRange()
-	////channel.BufferChannel()
-	////channel.FullChannel()
-	////channel.Mainprocess()
-	////channel.MainWorkPool()
-	////channel.MainFunc()
-	////playselect.MainSelect()
-	////playselect.MainMutex()
-	////playselect.Mainselectchannel()
-	//
-	//
-	//e := structasclassemployee.New("Yu", "zhipeng", 100,5,)
-	//e.LeavesRemaining()
-	//
-	//author := inheritance.Author{
-	//	"yu","zhipeng",24,
-	//}
-	//post := inheritance.Post{
-	//	"goodtitle","very good content",author,
-	//}
-	//web:=inheritance.Website{
-	//	Posts:[]inheritance.Post{post},
-	//}
-	//web.Contents()
-	//polymorphism.MainPoly()
-	//playdefer.MainDefer()
-	//
-	//playerror.Openfile()
-	//playerror.OpenWeb()
-	//err := playerror.ErrorNew("yu zhipeng create an Error")
-	//fmt.Println(err)
-	//playerror.MainCoustmerError()
+
+
 	//playpanic.Mainplaypanic()
 	//NewSection("firstfunction")
 	//firstfunction.Mainfirstfunc()

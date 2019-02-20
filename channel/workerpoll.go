@@ -1,5 +1,5 @@
 package channel
-//
+
 //import (
 //	"fmt"
 //	"sync"
@@ -60,8 +60,8 @@ package channel
 //
 //func worker(wg *sync.WaitGroup){
 //	for job := range jobs{
-//        output := Result{job, digits(job.randomno)}
-//        results <- output
+//       output := Result{job, digits(job.randomno)}
+//       results <- output
 //	}
 //	wg.Done()
 //}

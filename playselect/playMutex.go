@@ -9,6 +9,7 @@ import (
 var a = 0
 
 func increment(wg *sync.WaitGroup, mu *sync.Mutex){
+	//这个就是个锁 开了那么多协程 但是在这里锁上了
 	mu.Lock()
 	a += 1
 	mu.Unlock()

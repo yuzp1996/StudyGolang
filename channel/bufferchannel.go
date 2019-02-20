@@ -22,14 +22,14 @@ func BufferChannel(){
         fmt.Printf("read from ch and value is %d\n", v)
 		time.Sleep(1 * time.Second)
 	}
-	//for{   // I can get nil(0) from channel ch
-	//	testv, _ := <-ch
-	//	fmt.Printf("v is %v",testv)
-	//}
+	//for{   // I can get nil(0) from channel ch 从一个关闭的channel中读取的总是零值 如果锁没有关闭 就会有锁的错误
+	//	//	testv, _ := <-ch
+	//	//	fmt.Printf("v is %v",testv)
+	//	//}
 
 }
 
-func FullChannel(){
+func LenandCap(){
 	ch := make(chan string,2)
 	fmt.Printf("len is %d, and cap is %d \n", len(ch), cap(ch))
 	ch <- "yuzhipeng"

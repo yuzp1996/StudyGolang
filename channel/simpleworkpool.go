@@ -48,13 +48,28 @@ func dojob(jo int){
 	result <- jo
 }
 
+
+
 func MainFunc(){
 	starttime := time.Now()
 
-	go add(10)
+	// 往job中塞任务
+	go add(40)
+
+
+
+	// 从result中取结果 并且给done信息 结束阻塞
 	done := make(chan bool)
 	go take(done)
-	createWorkerPool(5)
+
+
+
+	//启动一定数量的goroutinue 的worker去做job【也就是把值从job拿到result中】
+	createWorkerPool(10) // 这个不能跟上面的互换 因为这个是要把值塞到result中的  所以需要有个goroutinue从result中取数据 没有的话就会锁住
+	//而且你还把这里锁死了  只有执行完了才能进行下一步 要是跟上面换的话肯定不行呗
+
+
+
 	<-done
 	endtime := time.Now()
 	difftime := endtime.Sub(starttime)

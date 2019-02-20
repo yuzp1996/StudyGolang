@@ -2,21 +2,32 @@ package inheritance
 
 import "fmt"
 
+//组合取代继承
+
+
+type Website struct {
+	Posts []Post
+}
+
+//匿名结构体可以直接进行访问的偶
+type Post struct {
+	Title string
+	Content string
+	Author
+}
+
 type Author struct{
 	Firstname string
 	Lastname string
 	Age int
 }
 
-func(a Author)fullName() string{
-	fullname := a.Firstname + a.Lastname
-	return fullname
-}
 
-type Post struct {
-	Title string
-	Content string
-	Author
+func(web Website)Contents(){
+	for what ,post := range web.Posts {
+		fmt.Printf("waht is %v", what)
+		post.Details()
+	}
 }
 
 func(p Post)Details(){
@@ -27,14 +38,9 @@ func(p Post)Details(){
 	fmt.Printf("p author full name  is %s \n", p.Author.fullName())
 }
 
-
-type Website struct {
-	 Posts []Post
+func(a Author)fullName() string{
+	fullname := a.Firstname + a.Lastname
+	return fullname
 }
 
-func(web Website)Contents(){
-	for what ,post := range web.Posts {
-		fmt.Printf("waht is %v", what)
-		post.Details()
-	}
-}
+

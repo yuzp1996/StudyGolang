@@ -56,7 +56,7 @@ func (jpxi Jpxi)source()string{
 	return jpxi.Source
 }
 
-
+//这里的参数就是接口类型的
 func printSalarySourceandTotalSalary(income []Income){
 	totalsalary := 0
 	for _, in := range income{
@@ -85,6 +85,7 @@ func MainPoly(){
 		50000,
 		"Salary、Welfare and Political",
 	}
+	//这里也做成了一个类型 你看这里面都是这个
 	incomer := []Income{
 		zpyu1,
 		yhxu,

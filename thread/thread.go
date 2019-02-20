@@ -13,7 +13,16 @@ func SayHello(){
 func MainThread(){
 	go SayHello()
 	fmt.Println("Main thread working")
-	time.Sleep(10 * time.Second)
+	time.Sleep(5 * time.Second)
+}
+
+func Maingorount(){
+	go gorountint()
+	go gorountstring()
+	//如果没有sleep的话 会立即退出 不会去执行gorount
+	//在 Go 主协程中使用休眠，以便等待其他协程执行完毕。信道可用于在其他协程结束执行之前，阻塞 Go 主协程
+	time.Sleep(3000 * time.Millisecond)
+	fmt.Println("Main thread")
 }
 
 func gorountint(){
@@ -29,12 +38,7 @@ func gorountstring(){
 	}
 }
 
-func Maingorount(){
-	go gorountint()
-    go gorountstring()
-	time.Sleep(3000 * time.Millisecond)
-	fmt.Println("Main thread")
-}
+
 
 
 

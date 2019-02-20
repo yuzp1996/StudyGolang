@@ -6,12 +6,12 @@ import (
 )
 
 func Server1(output1 chan string){
-	time.Sleep(time.Second*300)
+	time.Sleep(time.Second*3)
     output1 <- "Channel1 is here"
 }
 
 func Server2(output2 chan string){
-	time.Sleep(time.Second*20)
+	time.Sleep(time.Second*2)
 	output2 <- "Channel2 is here"
 }
 
@@ -29,6 +29,28 @@ func MainSelect(){
 	//default:
 	//	fmt.Printf("no server can response in time")
 	}
+}
 
+func sendsignal(signal chan string){
+	sendstring := "successful signal"
+	time.Sleep(10*time.Second)
+	signal<-sendstring
 
 }
+
+func ForandSelect(){
+	signal := make(chan string)
+	go sendsignal(signal)
+	for{
+		select{
+		case result := <-signal:
+			fmt.Println(result)
+			return
+		default:
+			time.Sleep(1*time.Second)
+			fmt.Println("watting")
+
+		}
+	}
+}
+
