@@ -4,6 +4,9 @@ import (
 	"fmt"
 )
 
+
+
+
 type Zpyu struct {
 	Sex string
 	Salary int
@@ -56,6 +59,8 @@ func (jpxi Jpxi)source()string{
 	return jpxi.Source
 }
 
+
+//所有实现了接口的类型，都可以把它的值保存在一个接口类型的变量中。在 Go 中，我们使用接口的这种特性来实现多态。
 //这里的参数就是接口类型的
 func printSalarySourceandTotalSalary(income []Income){
 	totalsalary := 0

@@ -34,6 +34,7 @@ func MainDefer(){
 		"Yuzhipeng",
 	}
 	person.Name = "zpyu"
+	//这里输出的PersonName 是zpyu  不是yuzhipeng 在defer执行的时候 就确定了参数值了
 	defer person.PersonName()
 	person.Name = "yuzhipeng"
 	fmt.Println("Welcome")

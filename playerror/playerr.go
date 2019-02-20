@@ -8,6 +8,7 @@ import (
 
 func Openfile(){
 	file, err := os.Open("./zpyutest.txt")
+	//在这获取他的类型 多好
 	if err, ok := err.(*os.PathError); ok{
 		fmt.Println(err.Path)
 		return
