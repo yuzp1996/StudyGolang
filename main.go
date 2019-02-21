@@ -3,6 +3,7 @@ package main
 import (
 	"StudyGolang/array"
 	"StudyGolang/channel"
+	"StudyGolang/firstfunction"
 	"StudyGolang/function"
 	"StudyGolang/inheritance"
 	"StudyGolang/maptest"
@@ -10,11 +11,15 @@ import (
 	"StudyGolang/playInterface"
 	"StudyGolang/playdefer"
 	"StudyGolang/playerror"
+	"StudyGolang/playpanic"
 	"StudyGolang/playselect"
 	"StudyGolang/playstring"
 	"StudyGolang/pointer"
 	"StudyGolang/polymorphism"
+	"StudyGolang/readfromfile"
 	"StudyGolang/rectangle"
+	"StudyGolang/reflectplay"
+	"StudyGolang/sort"
 	"StudyGolang/structasclassemployee"
 	"StudyGolang/thread"
 	"flag"
@@ -239,16 +244,19 @@ func main() {
 		channel.MainFunc()
 	}
 	case "Select":{
+		NewSection("Select")
 		//playselect.ForandSelect()
 		//playselect.MainSelect()
 		//playselect.MainMutex()
 		playselect.Mainselectchannel()
 	}
 	case "StructAsClass":{
+		NewSection("StructAsClass")
 		e := structasclassemployee.New("Yu", "zhipeng", 100,5,)
 		e.LeavesRemaining()
 	}
 	case "Inheritance":{
+		NewSection("Inheritance")
 		author := inheritance.Author{
 			"yu","zhipeng",24,
 		}
@@ -261,17 +269,49 @@ func main() {
 		web.Contents()
 	}
 	case "Polymorphism":{
+		NewSection("Polymorphism")
 		polymorphism.MainPoly()
 	}
 	case "Defer":{
+		NewSection("Defer")
 		playdefer.MainDefer()
 	}
 	case "PlayError":{
-		playerror.Openfile()
+		NewSection("PlayError")
+		//playerror.Openfile()
 		//playerror.OpenWeb()
-		//err := playerror.ErrorNew("yu zhipeng create an Error")
+
+		//simpleerr := errors.New("Errors: simple err")
+		//fmt.Println(simpleerr)
+
+		//err := playerror.ErrorNew(" yu zhipeng create an Error")
 		//fmt.Println(err)
-		//playerror.MainCoustmerError()
+
+		playerror.MainCoustmerError()
+	}
+	case "Panic":{
+		NewSection("Panic")
+		playpanic.Mainplaypanic()
+	}
+	case "FirstClassFunction":{
+		NewSection("firstfunction")
+		firstfunction.Mainfirstfunc()
+		firstfunction.Closure()
+		firstfunction.SelectStudent()
+	}
+	case "Reflect":{
+		NewSection("NewReflect")
+		reflectplay.Mainreflect()
+		reflectplay.TryReflect()
+	}
+	case "ReadFile":{
+		NewSection("FileHandling")
+		readfromfile.Readfile()
+		readfromfile.Readfrombuffer()
+	}
+	case "QuickSort":{
+		NewSection("FileHandling")
+		quicksort.QuickSort()
 	}
 	}
 
@@ -292,18 +332,9 @@ func main() {
 
 
 
-	//playpanic.Mainplaypanic()
-	//NewSection("firstfunction")
-	//firstfunction.Mainfirstfunc()
-	//firstfunction.Closure()
-	//firstfunction.SelectStudent()
-	//NewSection("NewReflect")
-	//reflectplay.Mainreflect()
-	//reflectplay.TryReflect()
-	//NewSection("FileHandling")
-	////readfromfile.Readfile()
-	////readfromfile.Readfrombuffer()
-	//quicksort.QuickSort()
+
+
+
 
 }
 

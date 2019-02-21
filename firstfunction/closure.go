@@ -26,6 +26,7 @@ func SelectStudent(){
 		64,
 	}
 	studentparam := []Student{s1,s2}
+	//就是把函数传过去 然后在那边进行计算 换了个地方而已
 	result := filter(studentparam,func(s Student)bool{
 		return s.Name=="ZPYU"
 	})

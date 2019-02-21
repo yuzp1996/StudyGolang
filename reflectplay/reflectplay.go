@@ -5,6 +5,10 @@ import (
 	"reflect"
 )
 
+//reflect 实现了运行时反射。reflect 包会帮助识别 interface{} 变量的底层具体类型和具体值
+//https://studygolang.com/articles/13178
+//应该尽量避免使用反射
+
 func Mainreflect(){
 	i := 10
 	fmt.Printf("i is %v, and Type is %T\n", i,i)
