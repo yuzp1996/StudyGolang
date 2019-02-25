@@ -169,7 +169,11 @@ func main() {
 			Salary:10,
 			Welfare:4,
 		}
-		playInterface.Calculate([]playInterface.TotalSalary{trainee,worker,some})
+		//Salary继承了那个接口 所以就变成了这个接口类型 所以这里会报错
+		Slary := playInterface.Salary{
+			Name:"zpyu",
+		}
+		playInterface.Calculate([]playInterface.TotalSalary{trainee,worker,some,Slary})
 		fmt.Println()
 
 		playInterface.WhoAmI("good")

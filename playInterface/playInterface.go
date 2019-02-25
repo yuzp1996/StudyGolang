@@ -2,6 +2,13 @@ package playInterface
 
 import "fmt"
 
+
+//在这里继承了一个接口  就相当于实现了这个接口 然后他就是这个接口类型的了
+type Salary struct {
+	TotalSalary
+	Name string
+}
+
 type TotalSalary interface{
 	CalculateSalary() int
 }
@@ -20,6 +27,7 @@ type Somethingelse struct{
 	Welfare int
 	Admin int
 }
+
 
 func (s Somethingelse)CalculateSalary()int{
 	return s.Salary + s.Welfare + s.Admin
