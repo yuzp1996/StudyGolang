@@ -30,7 +30,7 @@ var _ = Describe("Shopping cart", func() {
 		item1 := Item{Name: "test"}
 		carts := Cart{}
 		carts.AddItem(item1)
-		It("has 1 more unique item than it had earlier", func() {
+		Specify("has 1 more unique item than it had earlier", func() {
 			Expect(carts.Totalmount()).Should(Equal(1))
 		})
 		It("has 1 more unit than it had earlier", func() {})
