@@ -1,4 +1,4 @@
-package nomaltest
+package gomocktest
 
 import "fmt"
 

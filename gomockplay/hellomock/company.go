@@ -1,4 +1,4 @@
-package nomaltest
+package gomocktest
 
 type Company struct {
 	//现在感觉这里的接口更像是一个功能的集合 实现这些功能的 你就是我想要的
