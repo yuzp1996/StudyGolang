@@ -1,6 +1,7 @@
 package main
 
 import (
+	"StudyGolang/Struct"
 	"StudyGolang/array"
 	"StudyGolang/channel"
 	"StudyGolang/firstfunction"
@@ -316,6 +317,10 @@ func main() {
 	case "QuickSort":{
 		NewSection("FileHandling")
 		quicksort.QuickSort()
+	}
+	case "Struct":{
+		NewSection("Strut")
+		Struct.Deduplica()
 	}
 	}
 
