@@ -103,6 +103,13 @@ func main() {
 		fmt.Printf("slice can work and now it is %v \n", slicetest)
 		array.SlicewillChange(slicetest)
 		fmt.Printf("slice can work and last it is %v\n", slicetest)
+
+		var sliceteststring interface{}
+		sliceteststring = []string{"I","want","to","test the type assert"}
+
+		if _,ok := sliceteststring.([]int); !ok{
+			fmt.Println("wrong type")
+		}
 	}
 	case "Multipama":{
 		NewSection("Multipama")
