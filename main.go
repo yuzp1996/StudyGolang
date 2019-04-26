@@ -137,6 +137,8 @@ func main() {
 
 		playstring.CheckforJira("aaaa")
 
+		maptest1.MapTesthowtogetkey()
+
 	}
 	case "Pointor":{
 		NewSection("Pointer")

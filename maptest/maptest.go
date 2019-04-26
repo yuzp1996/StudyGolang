@@ -65,3 +65,25 @@ func Newmap() {
 	}
 
 }
+
+
+func MapTesthowtogetkey(){
+	person1 := Testpersonstruct{"zpyu",10}
+	person2 := Testpersonstruct{"jingtao",13}
+	personstructMap := map[string]Testpersonstruct{}
+	personstructMap[person1.Name] = person1
+	personstructMap[person2.Name] = person2
+	fmt.Println(personstructMap)
+	fmt.Println(personstructMap["zpyu"])
+	for _, personmapelement := range personstructMap{
+
+		fmt.Println(personmapelement)
+	}
+
+
+}
+
+type Testpersonstruct struct {
+	Name string
+	Age int
+}
