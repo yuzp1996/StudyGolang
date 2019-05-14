@@ -27,3 +27,8 @@ func CheckforJira(key string) {
 		fmt.Printf("FALSE match is %t\n", match)
 	}
 }
+
+func Exportwithsigal(pattern string) {
+	Fianal := fmt.Sprintf(pattern, "GIT_COMMIT")
+	fmt.Printf("\n Fianl get the value is %s \n \n", Fianal)
+}
