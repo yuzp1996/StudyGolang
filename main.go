@@ -136,6 +136,7 @@ func main() {
 			maptest1.Newmap()
 
 			NewSection("String")
+
 			playstring.PrintString("abcdefg")
 			fmt.Println(playstring.ChangeString([]rune("string"), 0))
 
