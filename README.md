@@ -1,9 +1,9 @@
 ### 如何运行
 
 
-go run main.go -Section=Inheritance
+go run main.go --Section=Inheritance
 
--Section 的可选值有：
+--Section 的可选值有：
 
 	case "Function"
 	case "IfElseSwitchFor"

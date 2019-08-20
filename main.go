@@ -23,7 +23,7 @@ import (
 	"StudyGolang/sort"
 	"StudyGolang/structasclassemployee"
 	"StudyGolang/thread"
-	"flag"
+	flag "github.com/spf13/pflag"
 	"fmt"
 	"os"
 )
@@ -47,10 +47,15 @@ func main() {
 		fmt.Fprintf(os.Stdout, "Usage of %s:\n", "zpyu")
 		flag.PrintDefaults()
 	}
-	sectionflag := flag.String("Section", "Function", "which section will run")
+
+	newsectionflag := flag.StringP("Section", "S","Function", "which section will run")
+
+	// Deprecated flag
+	flag.StringP("Sections", "o","Function", "which section will run")
+	flag.CommandLine.MarkDeprecated("Sections","Sections is Deprecated please use Section")
+
 	flag.Parse()
-	fmt.Println(*sectionflag)
-	switch *sectionflag {
+	switch *newsectionflag {
 	case "Function":
 		{
 			NewSection("Function")
