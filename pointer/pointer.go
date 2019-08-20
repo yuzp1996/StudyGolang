@@ -23,21 +23,30 @@ func Pointertest() {
 	fmt.Printf("after I exec *c++ b is %v\n", b)
 }
 
+func ShowPointerChange(val *int) {
+	fmt.Printf("val is %v \n", *val)
+	*val++
+}
 
-
- func ShowPointerChange(val *int){
- 	fmt.Printf("val is %v \n", *val)
- 	*val++
- }
-
-
-func ChangeArray(items *[3]int){
+func ChangeArray(items *[3]int) {
 	(*items)[1] = 1
 	items[0] = 0
 }
 
-
-
-func ChangewithSlice(sliceitem []int){
+func ChangewithSlice(sliceitem []int) {
 	sliceitem[0] = 100
+}
+
+type Person struct {
+	Name string
+	Age  int
+	Info map[string]string
+}
+
+func ChangePersonName(person *Person) {
+	if _, ok := person.Info["project"]; ok {
+		if _, ok := person.Info["contextproject"]; !ok {
+			person.Info["contextproject"] = person.Info["project"]
+		}
+	}
 }

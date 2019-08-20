@@ -171,6 +171,16 @@ func main() {
 
 			test := []int{1, 2, 3, 4, 5} // golang 的也是最后一个不显示
 			fmt.Printf("test [0:1] is %v and test [1:] is %v", test[0:1], test[1:5])
+
+			person := pointer.Person{
+				"zpyu",
+				12,
+				map[string]string{
+					"project": "projectname",
+				},
+			}
+			pointer.ChangePersonName(&person)
+			fmt.Printf("person is %v", person)
 		}
 	case "Method":
 		{
