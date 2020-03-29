@@ -47,14 +47,13 @@ func Printarrays(num [2][3]int) {
 	fmt.Printf("Array is %v\n", Array)
 
 	Slice := Array[0:3]
-	for i,_ := range Slice {
+	for i, _ := range Slice {
 		Slice[i]++
 	}
 	fmt.Printf("After slice++ Array is %v\n", Array)
 
 	// slice'cap is the array len
 	fmt.Printf("len(Slice) is %d, and cap(Slice) is %d \n", len(Slice), cap(Slice))
-
 
 	slicecap := []int{1, 2, 3, 4, 5}
 	fmt.Printf("len(slicecap) is %d, and cap(slicecap) is %d \n", len(slicecap), cap(slicecap))

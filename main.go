@@ -23,8 +23,8 @@ import (
 	"StudyGolang/sort"
 	"StudyGolang/structasclassemployee"
 	"StudyGolang/thread"
-	flag "github.com/spf13/pflag"
 	"fmt"
+	flag "github.com/spf13/pflag"
 	"os"
 )
 
@@ -48,11 +48,11 @@ func main() {
 		flag.PrintDefaults()
 	}
 
-	newsectionflag := flag.StringP("Section", "S","Function", "which section will run")
+	newsectionflag := flag.StringP("Section", "S", "Function", "which section will run")
 
 	// Deprecated flag
-	flag.StringP("Sections", "o","Function", "which section will run")
-	flag.CommandLine.MarkDeprecated("Sections","Sections is Deprecated please use Section")
+	flag.StringP("Sections", "o", "Function", "which section will run")
+	flag.CommandLine.MarkDeprecated("Sections", "Sections is Deprecated please use Section")
 
 	flag.Parse()
 	switch *newsectionflag {
@@ -125,7 +125,13 @@ func main() {
 		}
 	case "Multipama":
 		{
+
 			NewSection("Multipama")
+
+			teststring := function.Teststring{Name: "name"}
+			fmt.Printf("test.Name is %v\n", teststring)
+
+			function.Changearray()
 			function.Multipama(1, 2, 2, 2, 2, 3, 3, 1)
 			nums := []int{1, 2, 3, 4, 5}
 			//语法糖  可以传入切片

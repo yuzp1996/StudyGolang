@@ -1,5 +1,5 @@
 package nomaltest
 
 type Takler interface {
-	SayHello(word string)(response string)
+	SayHello(word string) (response string)
 }

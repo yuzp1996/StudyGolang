@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestCompany_Meeting(t *testing.T){
+func TestCompany_Meeting(t *testing.T) {
 	ctl := gomock.NewController(t)
 
 	//返回了一个可以mock的接口

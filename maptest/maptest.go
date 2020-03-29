@@ -51,7 +51,7 @@ func Newmap() {
 	fmt.Println("I want to know if two map [Salay]&[Salay] is same")
 	same := false
 
-//比较map是否相等
+	//比较map是否相等
 	for k, v := range Salay {
 		if SalayCopy[k] == v {
 			same = true
@@ -66,24 +66,22 @@ func Newmap() {
 
 }
 
-
-func MapTesthowtogetkey(){
-	person1 := Testpersonstruct{"zpyu",10}
-	person2 := Testpersonstruct{"jingtao",13}
+func MapTesthowtogetkey() {
+	person1 := Testpersonstruct{"zpyu", 10}
+	person2 := Testpersonstruct{"jingtao", 13}
 	personstructMap := map[string]Testpersonstruct{}
 	personstructMap[person1.Name] = person1
 	personstructMap[person2.Name] = person2
 	fmt.Println(personstructMap)
 	fmt.Println(personstructMap["zpyu"])
-	for _, personmapelement := range personstructMap{
+	for _, personmapelement := range personstructMap {
 
 		fmt.Println(personmapelement)
 	}
-
 
 }
 
 type Testpersonstruct struct {
 	Name string
-	Age int
+	Age  int
 }

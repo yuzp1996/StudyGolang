@@ -30,3 +30,22 @@ func Change(nums ...string) {
 	fmt.Printf("nums is %p  nums[0]is %p and len is %d  cap is %d\n", &(nums), &(nums[0]), len(nums), cap(nums))
 	fmt.Println("next is main")
 }
+
+func Changearray() {
+
+	ComplexArray1 := [3][]string{
+		[]string{"d", "e", "f"},
+		[]string{"g", "h", "i"},
+		[]string{"j", "k", "l"},
+	}
+	ComplexArray1[0][0] = "11"
+	fmt.Printf("ComplexArray1 is %v", ComplexArray1)
+}
+
+type Teststring struct {
+	Name string
+}
+
+func (t Teststring) String() string {
+	return t.Name
+}

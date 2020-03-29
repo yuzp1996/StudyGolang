@@ -5,18 +5,17 @@ import (
 	"time"
 )
 
-
-func SayHello(){
-    fmt.Println("Hello world")
+func SayHello() {
+	fmt.Println("Hello world")
 }
 
-func MainThread(){
+func MainThread() {
 	go SayHello()
 	fmt.Println("Main thread working")
 	time.Sleep(5 * time.Second)
 }
 
-func Maingorount(){
+func Maingorount() {
 	go gorountint()
 	go gorountstring()
 	//如果没有sleep的话 会立即退出 不会去执行gorount
@@ -25,21 +24,15 @@ func Maingorount(){
 	fmt.Println("Main thread")
 }
 
-func gorountint(){
-	for i := 1; i <= 5; i++{
+func gorountint() {
+	for i := 1; i <= 5; i++ {
 		fmt.Println(i)
 		time.Sleep(250 * time.Millisecond)
 	}
 }
-func gorountstring(){
-	for i := 'a'; i < 'e'; i++{
-		fmt.Printf("%c\n",i)
+func gorountstring() {
+	for i := 'a'; i < 'e'; i++ {
+		fmt.Printf("%c\n", i)
 		time.Sleep(400 * time.Millisecond)
 	}
 }
-
-
-
-
-
-

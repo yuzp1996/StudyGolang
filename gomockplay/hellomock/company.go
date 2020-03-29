@@ -5,14 +5,12 @@ type Company struct {
 	Usher Takler
 }
 
-
-
-func NewCompany(takler Takler)*Company{
+func NewCompany(takler Takler) *Company {
 	return &Company{
-		Usher:takler,
+		Usher: takler,
 	}
 }
 
-func (c *Company)Meeting(guestName string)string{
+func (c *Company) Meeting(guestName string) string {
 	return c.Usher.SayHello(guestName)
 }

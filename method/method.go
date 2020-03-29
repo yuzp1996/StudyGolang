@@ -9,73 +9,68 @@ type square struct {
 }
 
 type rectangle struct {
-	Width int
+	Width  int
 	Longth int
 }
 
-func (s square)Area() (area int) {
+func (s square) Area() (area int) {
 	area = s.Side * s.Side
 	return
 }
 
-func (r rectangle)Area()(area int){ //front is alias  after is type
+func (r rectangle) Area() (area int) { //front is alias  after is type
 	area = r.Longth * r.Width
 	return
 }
 
-func Area(Recangle rectangle)(area int){
+func Area(Recangle rectangle) (area int) {
 	area = Recangle.Width * Recangle.Longth
 	return
 }
 
-
-func Method(){
+func Method() {
 	Square := square{
-		Side : 5,
+		Side: 5,
 	}
 	Rectangle := rectangle{
-		Width:5,
-		Longth:6,
+		Width:  5,
+		Longth: 6,
 	}
-    fmt.Printf("Square area is %d \n ", Square.Area())
+	fmt.Printf("Square area is %d \n ", Square.Area())
 	fmt.Printf("Rectangle area is %d\n ", Rectangle.Area())
 
-	fmt.Printf("Area(Rectangle) is %d\n",Area(Rectangle))
+	fmt.Printf("Area(Rectangle) is %d\n", Area(Rectangle))
 	r := &(Rectangle)
 	//fmt.Printf("Area(*rectangle) is %d", Area(r))
-	fmt.Printf("r.Area is %d \n",r.Area())
+	fmt.Printf("r.Area is %d \n", r.Area())
 	fmt.Printf("Rectangel id %d \n", Rectangle.Area())
 	//函数说用什么就用什么 方法没事 不管声明的是指针还是值 都能用  不信上面的注释你都打开看看
 }
 
-
-
-
-
 type Person struct {
 	Name string
-	Age int
+	Age  int
 }
 
-func (p Person)ChangeName(name string){
+func (p Person) ChangeName(name string) {
 	p.Name = name
 	fmt.Printf("yuzhipeng's Name should be %s\n", name)
 }
-func (p *Person)ChangeAge(age int){
+func (p *Person) ChangeAge(age int) {
 	p.Age = age
 	fmt.Printf("yuzhipeng's Age should be %d\n", age)
 }
 
-func (p Person)UseValChange(name string)(person Person){
+func (p Person) UseValChange(name string) (person Person) {
 	person = p
 	person.Name = name
 	return
 }
 
-func ChangePersonInfo(){
+func ChangePersonInfo() {
 	person := Person{
-		Name:"yuzhipeng",
-		Age:24,
+		Name: "yuzhipeng",
+		Age:  24,
 	}
 	fmt.Println()
 	fmt.Printf("Before Change Age yuzhipeng is %v \n", person)
@@ -92,17 +87,14 @@ func ChangePersonInfo(){
 	fmt.Printf("After VAL Change Name yuzhipeng is %v \n", person)
 }
 
-
-
 //为int定义一个别名 然后可以为他设置方法 为非结构体设置方法
 type MyInt int
 
-func (myint MyInt)Add(addint MyInt) MyInt{
+func (myint MyInt) Add(addint MyInt) MyInt {
 	return myint + addint
 }
 
-
-func UseMyInt(){
+func UseMyInt() {
 	Valone := MyInt(3)
 	Valtwo := MyInt(4)
 	final := Valone.Add(Valtwo)

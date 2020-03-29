@@ -4,29 +4,30 @@ import (
 	"fmt"
 )
 
-func FinalFunc(biggestnum int){
+func FinalFunc(biggestnum int) {
 	fmt.Printf("Finall function  and biggest num is %d\n", biggestnum)
 }
 
-func Biggest(nums []int)(num int){
-    num = nums[0]
-    for _, v := range(nums){
-		if v > num{
+func Biggest(nums []int) (num int) {
+	num = nums[0]
+	for _, v := range nums {
+		if v > num {
 			num = v
 		}
 	}
-    return num
+	return num
 
 }
 
-func finalend(){
+func finalend() {
 	fmt.Println("everything ends")
 }
+
 // 就是个栈  越在前面 就越后面执行
 // 也就是defer是在最后执行的 然后defer也有执行顺序 那就是从下往上执行
-func MainDefer(){
+func MainDefer() {
 	defer finalend()
-	nums := []int{12,32,34,44,53,253,234,33}
+	nums := []int{12, 32, 34, 44, 53, 253, 234, 33}
 	num := Biggest(nums)
 	FinalFunc(num)
 
@@ -41,19 +42,18 @@ func MainDefer(){
 	reverstirng()
 }
 
-
-type Person struct{
+type Person struct {
 	Name string
 }
 
-func (person Person)PersonName(){
+func (person Person) PersonName() {
 	fmt.Println(person.Name)
 }
 
 //翻转字符串 多好
-func reverstirng(){
+func reverstirng() {
 	name := "zpyu"
-	for _, v := range []rune(name){
-		defer fmt.Printf("%c\n",v)
+	for _, v := range []rune(name) {
+		defer fmt.Printf("%c\n", v)
 	}
 }

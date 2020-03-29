@@ -9,7 +9,7 @@ import (
 func QuickSort() {
 
 	//slice := generateSlice(20)
-	slice := []int{3,2,1}
+	slice := []int{3, 2, 1}
 	fmt.Println("\n--- Unsorted --- \n\n", slice)
 	quicksort(slice)
 	fmt.Println("\n--- Sorted ---\n\n", slice, "\n")
@@ -36,13 +36,12 @@ func quicksort(a []int) []int {
 	//pivot := rand.Int() % len(a)
 	//fmt.Printf("pivot [%d] len(a) [%d] \n", pivot, len(a))
 
-
 	//a[pivot], a[right] = a[right], a[pivot]
 
 	for i, _ := range a {
 		if a[i] < a[right] {
 			a[left], a[i] = a[i], a[left]
-			left++  //小于最右边的 拿到左边来
+			left++ //小于最右边的 拿到左边来
 		}
 	}
 
