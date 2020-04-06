@@ -1,7 +1,7 @@
-package duck_test
+package strategy_test
 
 import (
-	. "StudyGolang/designPattern/duck"
+	. "StudyGolang/designPattern/strategy"
 	. "github.com/onsi/ginkgo"
 )
 

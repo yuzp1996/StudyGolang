@@ -1,4 +1,4 @@
-package duck_test
+package decorator_test
 
 import (
 	"testing"
@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-func TestDuck(t *testing.T) {
+func TestDecorator(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "Duck Suite")
+	RunSpecs(t, "Decorator Suite")
 }

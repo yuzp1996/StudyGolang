@@ -1,4 +1,4 @@
-package duck
+package strategy
 
 type Duck struct {
 	flybehavior FlyBehavior
