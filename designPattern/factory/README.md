@@ -24,7 +24,9 @@
 
 * 抽象工厂模式
 
-将ingredientfactory放到了factory中，初始化factory的时候， 将ingredientfactory作为参数初始化factory。而抽象工厂就是在搞ingreditentfatory的时候体现出来的
+将ingredientfactory放到了factory中，初始化factory的时候， 将ingredientfactory作为参数初始化factory。而抽象工厂就是在搞ingreditentfatory的时候体现出来的. ingredientfactory会传递到pizzastrore中，并且在pizza中被引用
+
+这个部分可以放到抽象工厂模式的 PizzaFacotry 中，作为其中的一个参数
 
 提供了一个接口，用来创建相关或者依赖对象的家族，而不需要指定具体类
 
