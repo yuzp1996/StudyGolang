@@ -9,7 +9,6 @@ func Simulate(){
 	fmt.Printf("coffeewithsalt and sugger cost is 『%v』\n",coffee.cost())
 	fmt.Printf("coffeewithsalt and sugger descritpion is 『%v』\n", coffee.getDescription())
 
-
 	darkCoffee := GetDarkCoffee()
 	firstcoffee := AddSugger(darkCoffee)
 	firstcoffee = AddSalt(firstcoffee)

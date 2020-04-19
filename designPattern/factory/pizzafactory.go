@@ -30,7 +30,7 @@ func NewBeijingPizzaFactory() BeijingPizzaFactory {
 	return BeijingPizzaFactory{}
 }
 
-//Createpizza create pizza
+// Createpizza create pizza
 func (BeijingPizzaFactory) Createpizza(pizzatype string) Pizza {
 	if pizzatype == "beijingcheese" {
 		return CheesePizza{

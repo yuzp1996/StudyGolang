@@ -19,10 +19,3 @@ func NewPizzaStore(factory PizzaFactory) PizzaStore {
 		Factory: factory,
 	}
 }
-
-//NewBeijingStore beijing store
-func NewBeijingStore(factory PizzaFactory) PizzaStore {
-	return PizzaStore{
-		Factory: factory,
-	}
-}

@@ -19,8 +19,8 @@ type CheesePizza struct {
 }
 
 func (pizza CheesePizza) prepare() {
-	fmt.Printf("pizza %s is prepared\n", pizza.name)
+	fmt.Printf("Cheese pizza %s is prepared\n", pizza.name)
 }
 func (pizza CheesePizza) bake() {
-	fmt.Printf("pizza %s is bake\n", pizza.name)
+	fmt.Printf("Cheese pizza %s is bake\n", pizza.name)
 }

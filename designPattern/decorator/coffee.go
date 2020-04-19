@@ -31,6 +31,8 @@ type DarkCoffee struct {
 func (coffee DarkCoffee) cost() int {
 	return 15
 }
+
+
 func (coffee DarkCoffee) getDescription() string {
 	return coffee.Description
 }
@@ -39,5 +41,4 @@ func GetDarkCoffee() DarkCoffee {
 	return DarkCoffee{
 		Description: "It's DarkCoffee ",
 	}
-
 }
