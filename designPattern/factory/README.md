@@ -26,7 +26,9 @@
 
 将ingredientfactory放到了factory中，初始化factory的时候， 将ingredientfactory作为参数初始化factory。而抽象工厂就是在搞ingreditentfatory的时候体现出来的
 
+提供了一个接口，用来创建相关或者依赖对象的家族，而不需要指定具体类
 
+![abstrctfactory](img/abstractfactory.png)
 
 ## 优点
 * 帮助我们将产品的实现从使用中解耦出来，无论是我们增加产品还是改变产品，createor都不会受到影响

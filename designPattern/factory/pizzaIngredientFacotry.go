@@ -2,8 +2,8 @@ package factory
 
 //PizzaIngredientFacotry  intreface for Pizza Ingredient Factory
 type PizzaIngredientFacotry interface {
-	getsalt() string
-	getsugger() string
+	createsalt() string
+	createsugger() string
 }
 
 type BeijingIngredientFacotry struct {
@@ -11,11 +11,11 @@ type BeijingIngredientFacotry struct {
 	suggername string
 }
 
-func (factory BeijingIngredientFacotry) getsalt() string {
+func (factory BeijingIngredientFacotry) createsalt() string {
 	return factory.saltname
 }
 
-func (factory BeijingIngredientFacotry) getsugger() string {
+func (factory BeijingIngredientFacotry) createsugger() string {
 	return factory.suggername
 }
 
@@ -24,10 +24,10 @@ type IngredientFacotry struct {
 	suggername string
 }
 
-func (factory IngredientFacotry) getsalt() string {
+func (factory IngredientFacotry) createsalt() string {
 	return factory.saltname
 }
 
-func (factory IngredientFacotry) getsugger() string {
+func (factory IngredientFacotry) createsugger() string {
 	return factory.suggername
 }

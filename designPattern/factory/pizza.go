@@ -20,7 +20,7 @@ type CheesePizza struct {
 }
 
 func (pizza CheesePizza) prepare() {
-	fmt.Printf("CheesePizza use salt %v use sugger %v\n", pizza.ingredientfactory.getsalt(), pizza.ingredientfactory.getsugger())
+	fmt.Printf("CheesePizza use salt %v use sugger %v\n", pizza.ingredientfactory.createsalt(), pizza.ingredientfactory.createsugger())
 	fmt.Printf("Cheese pizza %s is prepared\n", pizza.name)
 }
 func (pizza CheesePizza) bake() {
@@ -34,7 +34,7 @@ type BeijingCheesePizza struct {
 }
 
 func (pizza BeijingCheesePizza) prepare() {
-	fmt.Printf("BeijingPizza use salt %v use sugger %v\n", pizza.ingredientfactory.getsalt(), pizza.ingredientfactory.getsugger())
+	fmt.Printf("BeijingPizza use salt %v use sugger %v\n", pizza.ingredientfactory.createsalt(), pizza.ingredientfactory.createsugger())
 	fmt.Printf("BeijingCheese pizza %s is prepared\n", pizza.name)
 }
 func (pizza BeijingCheesePizza) bake() {
