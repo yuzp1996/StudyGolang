@@ -2,42 +2,48 @@ package factory
 
 //SimplePizzaFactory can create pizza
 type SimplePizzaFactory struct {
+	PizzaIngredientFacotry
 }
 
 //NewSimplePizzaFactory return a new NewSimplePizzaFactory
-func NewSimplePizzaFactory() SimplePizzaFactory {
-	return SimplePizzaFactory{}
+func NewSimplePizzaFactory(facotry PizzaIngredientFacotry) SimplePizzaFactory {
+	return SimplePizzaFactory{facotry}
 }
 
 //Createpizza create pizza
-func (SimplePizzaFactory) Createpizza(pizzatype string) Pizza {
+func (facotry SimplePizzaFactory) Createpizza(pizzatype string) Pizza {
 	if pizzatype == "cheese" {
 		return CheesePizza{
-			name: "cheese",
+			ingredientfactory: facotry.PizzaIngredientFacotry,
+			name:              "cheese",
 		}
 	}
 	return CheesePizza{
-		name: "defaultcheese",
+		ingredientfactory: facotry.PizzaIngredientFacotry,
+		name:              "defaultcheese",
 	}
 }
 
 // BeijingPizzaFactory represent the beijing pizza factory
 type BeijingPizzaFactory struct {
+	PizzaIngredientFacotry
 }
 
 // NewBeijingPizzaFactory start beijingpizza factory
-func NewBeijingPizzaFactory() BeijingPizzaFactory {
-	return BeijingPizzaFactory{}
+func NewBeijingPizzaFactory(facotry PizzaIngredientFacotry) BeijingPizzaFactory {
+	return BeijingPizzaFactory{facotry}
 }
 
 // Createpizza create pizza
-func (BeijingPizzaFactory) Createpizza(pizzatype string) Pizza {
+func (factory BeijingPizzaFactory) Createpizza(pizzatype string) Pizza {
 	if pizzatype == "beijingcheese" {
-		return CheesePizza{
-			name: "beijingcheese",
+		return BeijingCheesePizza{
+			ingredientfactory: factory,
+			name:              "beijingcheese",
 		}
 	}
-	return CheesePizza{
-		name: "defaultbeijingcheese",
+	return BeijingCheesePizza{
+		ingredientfactory: factory,
+		name:              "defaultbeijingcheese",
 	}
 }

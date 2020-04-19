@@ -15,12 +15,28 @@ type PizzaFactory interface {
 
 //CheesePizza one of the pizza
 type CheesePizza struct {
-	name string
+	ingredientfactory PizzaIngredientFacotry
+	name              string
 }
 
 func (pizza CheesePizza) prepare() {
+	fmt.Printf("CheesePizza use salt %v use sugger %v\n", pizza.ingredientfactory.getsalt(), pizza.ingredientfactory.getsugger())
 	fmt.Printf("Cheese pizza %s is prepared\n", pizza.name)
 }
 func (pizza CheesePizza) bake() {
 	fmt.Printf("Cheese pizza %s is bake\n", pizza.name)
+}
+
+//BeijingCheesePizza one of the pizza
+type BeijingCheesePizza struct {
+	ingredientfactory PizzaIngredientFacotry
+	name              string
+}
+
+func (pizza BeijingCheesePizza) prepare() {
+	fmt.Printf("BeijingPizza use salt %v use sugger %v\n", pizza.ingredientfactory.getsalt(), pizza.ingredientfactory.getsugger())
+	fmt.Printf("BeijingCheese pizza %s is prepared\n", pizza.name)
+}
+func (pizza BeijingCheesePizza) bake() {
+	fmt.Printf("BeijingCheese pizza %s is bake\n", pizza.name)
 }

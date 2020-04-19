@@ -9,7 +9,7 @@ func Simulate() {
 	// pizzastore -> pizzafactory -> pizza
 	fmt.Println("Pizza Store ")
 	// 这里的factory是一个接口， 这也印证了 针对接口编程而不是针对实现编程
-	pizzastore := NewPizzaStore(NewSimplePizzaFactory())
+	pizzastore := NewPizzaStore(NewSimplePizzaFactory(IngredientFacotry{"saltname", "suggername"}))
 
 	defaultpizza := pizzastore.orderPizza("whaterver")
 	defaultpizza.prepare()
@@ -21,7 +21,7 @@ func Simulate() {
 
 	fmt.Println("Bejing Pizza Store")
 
-	beijingpizzastore := NewPizzaStore(NewBeijingPizzaFactory())
+	beijingpizzastore := NewPizzaStore(NewBeijingPizzaFactory(BeijingIngredientFacotry{"beijingsaltname", "beijing suggername"}))
 
 	defaultbeijingpizza := beijingpizzastore.orderPizza("whaterver")
 	defaultbeijingpizza.prepare()

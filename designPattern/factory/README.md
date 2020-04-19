@@ -12,7 +12,20 @@
 
 
 ## UML 图
-![uml图](./factory.png)
+
+* 简单工厂
+![simplefactory](img/simplefactory.png)
+
+
+* 工厂模式  
+我们允许用户自己做决定要创建的子类是什么。 比如createpizza  其实是把createpizza放在了子工厂中来做      工厂方法模式定义了一个创建对象的接口，但由**子类决定要实例化的类是哪一个**，工厂方法让类把实例化推迟到了子类
+
+![uml图](img/factory.png)
+
+* 抽象工厂模式
+
+将ingredientfactory放到了factory中，初始化factory的时候， 将ingredientfactory作为参数初始化factory。而抽象工厂就是在搞ingreditentfatory的时候体现出来的
+
 
 
 ## 优点

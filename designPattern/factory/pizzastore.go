@@ -8,7 +8,8 @@ type PizzaStore struct {
 }
 
 func (pizzastore PizzaStore) orderPizza(pizzatype string) Pizza {
-	fmt.Println("This is order progress,It should be commom")
+	fmt.Println("This is order progress,It is  commom")
+	fmt.Println("someone order pizza, and the info will be copy to the master company money mangement system")
 	pizza := pizzastore.Factory.Createpizza(pizzatype)
 	return pizza
 }
