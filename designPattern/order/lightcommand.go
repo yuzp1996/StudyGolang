@@ -17,12 +17,20 @@ type LightOnCommand struct {
 	Light
 }
 
+func NewLightOnCommand(light Light) LightOnCommand {
+	return LightOnCommand{light}
+}
+
 func (command LightOnCommand) execute() {
 	command.Light.on()
 }
 
 type LightOffCommand struct {
 	Light
+}
+
+func NewLightOffCommand(light Light) LightOffCommand {
+	return LightOffCommand{light}
 }
 
 func (command LightOffCommand) execute() {
