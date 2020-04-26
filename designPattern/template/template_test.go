@@ -7,10 +7,10 @@ import (
 
 var _ = Describe("Template", func() {
 	It("template pattern should work well", func() {
-		//caffeinebeverage := template.NewCaffeineBeverage("caffeinebeverage")
+		caffeinebeverage := template.NewCaffeineBeverage()
 
-		coffee := template.NewCoffee("coffee")
-		tea := template.NewTea("tea")
+		coffee := template.NewCoffee("coffee", *caffeinebeverage)
+		tea := template.NewTea("tea", *caffeinebeverage)
 		waiter := template.NewWaiter("zpyu")
 		waiter.MakeDrink(tea)
 		waiter.MakeDrink(coffee)

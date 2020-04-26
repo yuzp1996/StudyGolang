@@ -7,23 +7,16 @@ type Drink interface {
 	AddCodiments()
 }
 
-type DrinkProgress interface {
-	PrepareRecipe()
-}
-
-type CaffeineBeverage struct {
+type BaseDrink interface {
+	BoilWater()
 	Drink
 }
 
-func NewCaffeineBeverage(drink Drink) *CaffeineBeverage {
-	return &CaffeineBeverage{Drink: drink}
+type CaffeineBeverage struct {
 }
 
-func (beverage CaffeineBeverage) PrepareRecipe() {
-	beverage.BoilWater()
-	beverage.Brew()
-	beverage.Drink.AddCodiments()
-	fmt.Printf("CaffeineBeverage is ready, enjoy yourself...\n\n\n")
+func NewCaffeineBeverage() *CaffeineBeverage {
+	return &CaffeineBeverage{}
 }
 
 func (beverate CaffeineBeverage) BoilWater() {
@@ -31,4 +24,7 @@ func (beverate CaffeineBeverage) BoilWater() {
 }
 func (beverate CaffeineBeverage) Brew() {
 	fmt.Println("brew normal ...")
+}
+func (beverate CaffeineBeverage) AddCodiments() {
+	fmt.Println("add codiments ...")
 }

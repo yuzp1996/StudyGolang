@@ -3,11 +3,12 @@ package template
 import "fmt"
 
 type Coffee struct {
+	CaffeineBeverage
 	Name string
 }
 
-func NewCoffee(name string) CaffeineBeverage {
-	return *NewCaffeineBeverage(Coffee{Name: name})
+func NewCoffee(name string, base CaffeineBeverage) Coffee {
+	return Coffee{base, name}
 }
 
 func (coffee Coffee) AddCodiments() {
