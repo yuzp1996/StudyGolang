@@ -18,3 +18,7 @@ func (coffee Tea) AddCodiments() {
 func (coffee Tea) Brew() {
 	fmt.Println("brew beverage for tea ...")
 }
+
+func (coffee Tea) BoilWater() {
+	fmt.Println("boil water  for tea ...")
+}
