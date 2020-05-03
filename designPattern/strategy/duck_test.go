@@ -1,8 +1,8 @@
 package strategy_test
 
 import (
-	. "StudyGolang/designPattern/strategy"
 	. "github.com/onsi/ginkgo"
+	. "github.com/yuzp1996/StudyGolang/designPattern/strategy"
 )
 
 var _ = Describe("Duck", func() {

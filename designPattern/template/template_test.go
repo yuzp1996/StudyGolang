@@ -1,8 +1,8 @@
 package template_test
 
 import (
-	"StudyGolang/designPattern/template"
 	. "github.com/onsi/ginkgo"
+	"github.com/yuzp1996/StudyGolang/designPattern/template"
 )
 
 var _ = Describe("Template", func() {

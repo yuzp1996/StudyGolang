@@ -9,6 +9,7 @@ type Drink interface {
 
 type BaseDrink interface {
 	BoilWater()
+	NeedCodiments() bool
 	Drink
 }
 
@@ -28,3 +29,8 @@ func (beverate CaffeineBeverage) Brew() {
 func (beverate CaffeineBeverage) AddCodiments() {
 	fmt.Println("add codiments ...")
 }
+
+func (beverate CaffeineBeverage) NeedCodiments()bool {
+	return true
+}
+

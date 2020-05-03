@@ -14,5 +14,11 @@ func (waiter Waiter) MakeDrink(beverage BaseDrink) {
 	fmt.Printf("Hello I am waiter %s, I am happy server for you \n", waiter.Name)
 	beverage.BoilWater()
 	beverage.Brew()
-	beverage.AddCodiments()
+	if beverage.NeedCodiments(){
+		fmt.Printf("Add codiment for customer\n")
+		beverage.AddCodiments()
+	}else{
+		fmt.Printf("No codiment add for customer\n")
+	}
+
 }
