@@ -1,7 +1,7 @@
 package observer_test
 
 import (
-	"StudyGolang/designPattern/observer"
+	"github.com/yuzp1996/StudyGolang/designPattern/observer"
 	. "github.com/onsi/ginkgo"
 )
 
