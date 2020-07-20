@@ -12,6 +12,7 @@ var _ = Describe("Proxy", func() {
 		coder := proxy.NewCoder("zpyu",*proxycmd)
 
 		coder.Clone()
+
 	})
 
 })
